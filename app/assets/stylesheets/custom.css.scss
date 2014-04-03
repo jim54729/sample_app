@@ -1,7 +1,6 @@
 @import "bootstrap";
 
 /* mixins, variables, etc. */
-/* assigning eaeaea to the color */
 
 $grayMediumLight: #eaeaea;
 
@@ -106,6 +105,8 @@ footer {
       margin-left: 10px;
     }
   }
+}
+
 /* miscellaneous */
 
 .debug_dump {
@@ -113,11 +114,7 @@ footer {
   float: left;
   width: 100%;
   margin-top: 45px;
-  
-  @include box_sizing; is being replaced by:  /*#uncommented out this line 4-3-14*/
-  -moz-box-sizing: border-box; 
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+  @include box_sizing;
 }
 
 /* sidebar */
@@ -162,6 +159,7 @@ input, textarea, select, .uneditable-input {
 input {
   height: auto !important;
 }
+
 #error_explanation {
   color: #f00;
   ul {
@@ -173,6 +171,4 @@ input {
 .field_with_errors {
   @extend .control-group;
   @extend .error;
-}
-
 }
