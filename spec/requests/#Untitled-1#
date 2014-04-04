@@ -1,0 +1,3 @@
+bundle
+rake db:drop:all db:create:all db:migrate db:test:prepare
+
