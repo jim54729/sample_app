@@ -1,3 +1,21 @@
 bundle
 rake db:drop:all db:create:all db:migrate db:test:prepare
 
+git add .
+git commit -m "one last time"
+git push heroku master   #worked this time.  :)
+
+
+heroku run rake db:migrate
+git remote add heroku git@heroku.com:jimssitemarxprojectone.git
+
+  git remote -v
+
+  git push heroku master
+
+  bundle exec rake db:reset
+  bundle exec rake test:prepare
+  Ctrl-C  #to restart the server.
+  
+  rails server
+  heroku open
