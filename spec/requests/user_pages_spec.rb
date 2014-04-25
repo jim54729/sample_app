@@ -12,13 +12,7 @@ describe "User pages" do
     it { should have_title(user.name) }
   end
 
-  describe "signup" do
-
-    before { visit signup_path }
-
-    let(:submit) { "Create my account" }
-    
-    describe "edit" do
+  describe "edit" do
     let(:user) { FactoryGirl.create(:user) }
     before do
       sign_in user
@@ -30,6 +24,12 @@ describe "User pages" do
       it { should have_title("Edit user") }
       it { should have_link('change', href: 'http://gravatar.com/emails') }
     end
+  end
+
+  describe "signup" do
+    before { visit signup_path }
+
+    let(:submit) { "Create my account" }
 
     describe "with invalid information" do
       it "should not create a user" do
@@ -54,6 +54,7 @@ describe "User pages" do
       it "should create a user" do
         expect { click_button submit }.to change(User, :count).by(1)
       end
+
       describe "after saving the user" do
         before { click_button submit }
         let(:user) { User.find_by(email: 'user@example.com') }
